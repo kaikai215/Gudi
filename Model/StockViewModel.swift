@@ -8,7 +8,7 @@
 import Foundation
 
 struct StockViewModel: Codable {
-    let date: String           // 原始格式是 "1140610"
+    let date: String           // 原始格式 "1140610"
     let code: String           // 股票代號
     let name: String           // 股票名稱
     let tradeVolume: String       // 成交股數

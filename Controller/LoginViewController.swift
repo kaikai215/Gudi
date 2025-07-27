@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("❌ 登入失敗：\(error.localizedDescription)")
+                print("登入失敗：\(error)")
                 self.showAlert(message: "登入失敗")
                 return
             }
@@ -56,9 +56,9 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 
-                // ⚠️ 這邊要記得設定 Storyboard ID 為 "MainTabBarController"
+                
                 guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController else {
-                    print("❌ 找不到 MainTabBarController")
+                    print(" 找不到 MainTabBarController")
                     return
                 }
                 

@@ -81,7 +81,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.tradeVolumeLabel.text = formatTradeVolume(stock.tradeVolume)
 
         
-        // ✅ 漲跌幅顏色設定
+        // 漲跌幅顏色設定
         let change = Double(stock.change.replacingOccurrences(of: ",", with: "")) ?? 0
         if change > 0 {
             cell.changeLabel.textColor = .red
@@ -91,7 +91,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
             cell.changeLabel.textColor = .gray
         }
 
-        // ✅ 星星圖示設定
+        // 星星圖示設定
         let isFavorited = favoriteCodes.contains(stock.code)
         cell.favoriteButton?.setImage(UIImage(systemName: isFavorited ? "star.fill" : "star"), for: .normal)
         cell.favoriteButton?.isUserInteractionEnabled = false
@@ -100,7 +100,6 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 使用 Storyboard segue
         tableView.deselectRow(at: indexPath, animated: true)
     }
     //把交易股數換算成「張」

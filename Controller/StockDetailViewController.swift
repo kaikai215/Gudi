@@ -97,7 +97,7 @@ class StockDetailViewController: UIViewController {
 
         stockService.fetchStockHistory(for: stock.code, date: dateStr) { [weak self] records in
             guard let self = self, let records = records, !records.isEmpty else {
-                print("❌ 無法取得歷史資料或資料為空")
+                print("無法取得歷史資料或資料為空")
                 return
             }
 

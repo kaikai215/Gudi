@@ -48,7 +48,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    //message 是要顯示的訊息文字 completion 是可選的動作（也就是「提示框消失後要做的事」）
+    //message 是要顯示的訊息文字
     func showAlert(message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "好", style: .default) { _ in

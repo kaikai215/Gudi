@@ -62,14 +62,14 @@ class HomeViewController: UIViewController,UISearchBarDelegate {
         do {
             try Auth.auth().signOut()
                 
-            // ✅ 回到登入畫面
+            //回到登入畫面
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
             loginVC.modalPresentationStyle = .fullScreen
             present(loginVC, animated: true, completion: nil)
                 
         } catch let signOutError as NSError {
-            print("❌ 登出失敗: %@", signOutError)
+            print("登出失敗: %@", signOutError)
         }
     }
     
@@ -170,7 +170,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, StockT
         }
 
 
-        // ✅ 漲跌幅紅綠色
+        // 漲跌幅紅綠色
         let change = Double(stock.change.replacingOccurrences(of: ",", with: "")) ?? 0
         if change > 0 {
             cell.changeLabel.textColor = .red
@@ -180,18 +180,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, StockT
             cell.changeLabel.textColor = .gray
         }
 
-        // ✅ 星星圖示
+        // 星星圖示
         let isFavorited = favoriteStockCodes.contains(stock.code)
         let starImage = UIImage(systemName: isFavorited ? "star.fill" : "star")
         cell.favoriteButton.setImage(starImage, for: .normal)
 
-        // ⭐️ 點擊星星
+        // 點擊星星
         cell.delegate = self
 
         return cell
     }
 
-    // ⭐️ 點星星事件處理
+    // 點星星加到我的最愛
     func didTapFavorite(on cell: StockTableViewCell) {
         guard let indexPath = stocksTableView.indexPath(for: cell) else { return }
         let stock = displayedStocks[indexPath.row]

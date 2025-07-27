@@ -34,7 +34,7 @@ struct StockChartBuilder {
             xLabels.append(formatDateString(record.date))
         }
 
-        // 依序設定每個點的顏色，第一個點沒漲跌參考，統一用藍色
+        // 依序設定每個點的顏色
         var circleColors: [NSUIColor] = []
         for i in 0..<closes.count {
             if i == 0 {
@@ -51,8 +51,7 @@ struct StockChartBuilder {
         }
         dataSet.circleColors = circleColors
 
-        // 折線顏色，如果想依漲跌改顏色比較複雜，通常用單一色比較多
-        // 這邊用藍色為主線
+        // 折線顏色
         dataSet.colors = [.systemBlue]
 
         let lineChartData = LineChartData(dataSet: dataSet)
