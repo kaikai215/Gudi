@@ -22,6 +22,10 @@ class HomeViewController: UIViewController,UISearchBarDelegate {
     let stockService = StockService()
     let favoriteService = FavoriteService()
 
+    private let tealColor = UIColor(red: 0.22, green: 0.55, blue: 0.53, alpha: 1)
+    private let darkTextColor = UIColor(red: 0.2, green: 0.22, blue: 0.28, alpha: 1)
+    private let separatorColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,8 +41,32 @@ class HomeViewController: UIViewController,UISearchBarDelegate {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
 
+        setupAppearance()
         loadFavorites()
         loadStockData()
+    }
+
+    private func setupAppearance() {
+        // 搜尋列：透明底、白輸入框、圓角
+        searchBar.backgroundImage = UIImage()
+        searchBar.barTintColor = .clear
+        searchBar.backgroundColor = .clear
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = .white
+            textField.textColor = darkTextColor
+            textField.font = .systemFont(ofSize: 16)
+            textField.layer.cornerRadius = 12
+            textField.clipsToBounds = true
+            textField.attributedPlaceholder = NSAttributedString(
+                string: "搜尋股票名稱或代碼",
+                attributes: [.foregroundColor: UIColor(red: 0.6, green: 0.62, blue: 0.68, alpha: 1)]
+            )
+        }
+
+        // 表格：分隔線顏色、留白
+        stocksTableView.separatorColor = separatorColor
+        stocksTableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        stocksTableView.backgroundColor = .white
     }
 
     override func viewWillAppear(_ animated: Bool) {

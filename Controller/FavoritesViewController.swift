@@ -18,11 +18,20 @@ class FavoritesViewController: UIViewController {
     var allStocks: [StockViewModel] = []      // 所有股票資料
     var favoriteStocks: [StockViewModel] = [] // 篩選後的最愛股票資料
 
+    private let separatorColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        setupAppearance()
         loadData()
+    }
+
+    private func setupAppearance() {
+        tableView.separatorColor = separatorColor
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.backgroundColor = .white
     }
     
     //載入 Firebase + 股票資料  用.filter 篩出有加進最愛的股票
