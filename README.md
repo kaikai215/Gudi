@@ -8,17 +8,24 @@ Gudi 是一個展示 MVC 架構的 iOS 示範專案，結合 Firebase 與台灣�
 
 ## 📸 應用程式截圖
 
-| Gudi01 | Gudi02 |
-| :---: | :---: |
-| ![Gudi01](Gudi01.png) | ![Gudi02](Gudi02.png) |
-
-| Gudi03 | Gudi04 |
-| :---: | :---: |
-| ![Gudi03](Gudi03.png) | ![Gudi04](Gudi04.png) |
-
-| Gudi05 | Gudi06 |
-| :---: | :---: |
-| ![Gudi05](Gudi05.png) | ![Gudi06](Gudi06.png) |
+<table>
+  <tr>
+    <td align="center"><img src="Gudi01.png" width="260" alt="Gudi01" /></td>
+    <td align="center"><img src="Gudi02.png" width="260" alt="Gudi02" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="Gudi03.png" width="260" alt="Gudi03" /></td>
+    <td align="center"><img src="Gudi04.png" width="260" alt="Gudi04" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="Gudi05.png" width="260" alt="Gudi05" /></td>
+    <td align="center"><img src="Gudi06.png" width="260" alt="Gudi06" /></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="Gudi07.png" width="260" alt="Gudi07" /></td>
+    <td align="center"><img src="Gudi08.png" width="260" alt="Gudi08" /></td>
+  </tr>
+</table>
 
 ## 主要功能
 
